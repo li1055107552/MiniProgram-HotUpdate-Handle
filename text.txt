@@ -1,0 +1,42 @@
+<view class="all" wx:if="{{islogin}}" >
+    test
+    <view class="head">
+        <!-- 状态栏 -->
+        <view style="height: {{statusBarHeight}}px;"></view>
+
+        <view wx:if="{{show}}">
+
+            <text bindtap="showCurriculumPoint">{{'第 ' + whichWeek + ' 周' === curWeek ? curWeek : '第 ' + whichWeek + ' 周(非本周)' }}</text>
+
+            <view class="feedback-btn" bindtap="feedbackHandler">
+                <image src="../../images/btn_feed@2x.png" style="width: 40rpx;height: 40rpx;"></image>
+            </view>
+        
+        </view>
+
+        <!-- 导航栏 -->
+        <view class="cur-week" style="height: {{lineHeight}}px;">
+
+            <view class="seeting-btn" bindtap="seetingHandler">
+                <image src="../../images/more.png" style="width: 40rpx;height: 40rpx;"></image>
+            </view>
+
+            <text style="margin-left:10rpx" class='iconfont icon-open' bindtap="showCurriculumPoint"></text>
+            
+        </view>
+
+    </view>
+
+      
+</view>
+
+
+<view wx:else="">
+
+        <view class="seeting-btn" bindtap="seetingHandler">
+            <image src="../../images/more.png" style="width: 40rpx;height: 40rpx;"></image>
+        </view>
+
+        <text style="margin-left:10rpx" class='iconfont icon-open' bindtap="showCurriculumPoint"></text>
+
+</view>
